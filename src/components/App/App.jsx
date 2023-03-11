@@ -19,6 +19,10 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import PlayerPage from '../PlayerPage/PlayerPage';
+import CourtsPage from '../CourtsPage/CourtsPage';
+import ScoreboardPage from '../ScoreboardPage/ScoreboardPage';
+import Top10Page from '../Top10Page/Top10Page';
 
 import './App.css';
 
@@ -67,6 +71,39 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/player"
+          >
+            <PlayerPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/courts"
+          >
+            <CourtsPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/scoreboard"
+          >
+            <ScoreboardPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/top10"
+          >
+            <Top10Page />
+          </ProtectedRoute>
+
 
           <Route
             exact
