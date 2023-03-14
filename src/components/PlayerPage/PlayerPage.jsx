@@ -22,9 +22,10 @@ function PlayerPage() {
   return (
     <div className="container">
       <p>My Player Page</p>
-      { JSON.stringify(player)}
-      { JSON.stringify(player.wins)}
-      { JSON.stringify(player.losses)}
+      {/* { JSON.stringify(player)} */}
+      {player.map(item => {
+      return <li>{ "Name: " + item.username}  { "Wins: " + item.wins} { "losss: " + item.losses}</li>;
+      })}
     </div>
   );
 }
