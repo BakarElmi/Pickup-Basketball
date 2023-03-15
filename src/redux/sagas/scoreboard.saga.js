@@ -25,8 +25,19 @@ function* fetchScoreboard() {
   }
 }
 
+function* winning(action){
+  try {
+    const playerID = action.payload;
+    yield axios.put("/api/player/win", playerID)
+    yield put({type: 'FETCH_SCOREBOARD'})
+  } catch(error){
+
+  }
+}
+
 function* scoreboardSaga() {
   yield takeLatest('FETCH_SCOREBOARD', fetchScoreboard);
+  yield takeLatest('UPDATE_WIN', winning);
 }
 
 export default scoreboardSaga;

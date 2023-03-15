@@ -26,24 +26,26 @@ function ScoreboardPage() {
     const time =[minutes, setMinutes] = useState(0)
   }
 
-
+  function win(){
+   dispatch({ type: 'UPDATE_WIN',
+  payload: "1"})
+  }
   
   
   return (
     <div className="container">
-      <p>SCOREBOARD Page</p>
       <h1>Team 1</h1>
       <h2>{count}</h2>
-      <div className="button-wrapper">
-          <button className="increase" onClick={()=>setCount(count+1)}>+</button>
-          <button className="decrease"onClick={()=>setCount(count-1)}>-</button>
-      </div>
+
+          <button className="increase" onClick={()=>setCount(count+2)}>2</button>
+          <button className="decrease"onClick={()=>setCount(count+3)}>3</button>
+
       <h1>Team 2</h1>
       <h2>{count2}</h2>
-      <div className="button-wrapper">
-          <button onClick={()=>setCount2(count2+1)}>+</button>
-          <button onClick={()=>setCount2(count2-1)}>-</button>
-      </div>
+
+          <button className="increase" onClick={()=>setCount2(count2+2)}>2</button>
+          <button className="decrease" onClick={()=>setCount2(count2+3)}>3</button>
+
     </div>
   );
 }

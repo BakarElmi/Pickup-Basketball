@@ -11,39 +11,14 @@
 }
 
 
-.ScoreboardPage{
-  font-family:Montserrat, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap:2rem;
-  height: 100vh;
-  background-color:gray;
-  color: gray;
-  box-shadow: 0 4px 0px #333;
-}
 
-.h1{
+
+h1{
   font-size: 6rem;
+  background-color:rgb(9, 0, 0);
 }
 
 
-.button-wrapper{
-
-  display: flex;
-  gap:1rem;
-
-    border: none;
-    background-color:white;
-    font-weight:bold;
-    font-size:2rem;
-    color:inherit;
-    height:4rem;
-    width:4rem;
-
-
-  }
 
   /* .button-wrapper:hover{
     background: #549d59;
@@ -52,33 +27,63 @@
 
   .increase{
 
-    display: flex;
-  gap:1rem;
+
     border: none;
     background-color:rgb(237, 30, 30);
     font-weight:bold;
     font-size:2rem;
     color:inherit;
-    height:4rem;
-    width:8rem;
+    height:2rem;
+    width:4rem;
   }
 
   .decrease{
-    display: flex;
-  gap:1rem;
+
     border: none;
     background-color:rgb(237, 30, 30);
     font-weight:bold;
     font-size:2rem;
     color:inherit;
-    height:4rem;
+    height:2rem;
     width:8rem;
 
   }
 
   .increase:hover{
-    background: #549d59;
+    background: #ecf805;
     cursor: pointer;
+
+  }
+
+  .decrease:hover{
+    background: #ecf805;
+    cursor: pointer;
+
+  }
+
+  h2{
+
+    margin: center;
+  width: 50%;
+
+
+    display: flex;
+    border: none;
+    font-weight:bold;
+    font-size:5rem;
+    color:rgb(6, 0, 0);
+
+  }
+
+
+  h5{
+
+
+    display: flex;
+    border: none;
+    font-weight:bold;
+    font-size:3rem;
+    color:rgb(0, 0, 0);
 
   }
 
