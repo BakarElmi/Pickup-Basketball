@@ -57,14 +57,14 @@ function CourtsPage() {
   // });
   // }
 
-
+  // const filtered = court.map(court =>  <Card key={court.name} court={person} />); 
   return (
     <div className="container">
       <p>Find Courts Page</p>
       {/* { JSON.stringify(court)} */}
 
       <input type="text" placeholder='court name' onChange={handleChange} />
-      <button onClick={obj1}>search</button>
+      {/* <button onClick={obj1}>search</button> */}
       <button >All</button>
       {court.map(item => {
       return <li>{ "Name: " + item.name}</li>;
