@@ -69,11 +69,11 @@ function CourtsPage() {
       {/* { JSON.stringify(court)} */}
 
       <input type="text" placeholder='court name' onChange={handleChange} />
-      <button>search</button>
+      {/* <button>search</button> */}
       <button >All</button>
       {/* <h1>{obj1[0]}</h1> */}
       {obj1.map(item => {
-      return <li classname="search" key={item.id}>{item.name + " address: " + item.address}</li>;
+      return (<li classname="search" key={item.id}>{item.name + " address: " + item.address + " Notes: " + item.Notes}<button>+</button></li>)
       })}
 
     </div>

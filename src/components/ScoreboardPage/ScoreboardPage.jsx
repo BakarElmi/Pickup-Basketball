@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './ScoreboardPage.css';
+import sound from "./swoosh1.wav"
+import sound2 from "./swoosh2.wav"
 
 
 // This is one of our simplest components
@@ -31,7 +33,14 @@ function ScoreboardPage() {
   payload: "1"})
   }
   
-  
+  function play() {
+    new Audio(sound).play()
+  }
+
+  function play2() {
+    new Audio(sound2).play()
+  }
+
   return (
     <div className="container">
       <h1>Team 1</h1>
@@ -39,6 +48,8 @@ function ScoreboardPage() {
 
           <button className="increase" onClick={()=>setCount(count+2)}>2</button>
           <button className="decrease"onClick={()=>setCount(count+3)}>3</button>
+          <button onClick={play}>iii</button>
+          <button onClick={play2}>iiii</button>
 
       <h1>Team 2</h1>
       <h2>{count2}</h2>

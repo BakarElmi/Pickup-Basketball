@@ -32,8 +32,8 @@ function PlayerPage() {
                 <br></br>
                 <h2 >Fav courts:</h2>
                 <h3>Luxton Park</h3>
-                <h3>Longfellow Park</h3>
-                <h3>Painter Park</h3>
+                <h3>Phelps Field Park</h3>
+
       
       </>
       )
