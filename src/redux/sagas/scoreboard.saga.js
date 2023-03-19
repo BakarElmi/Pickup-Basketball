@@ -28,16 +28,42 @@ function* fetchScoreboard() {
 function* winning(action){
   try {
     const playerID = action.payload;
-    yield axios.put("/api/player/win", playerID)
+    console.log("in winning: ", playerID);
+    yield axios.put("/api/player/win", {id:playerID})
     yield put({type: 'FETCH_SCOREBOARD'})
   } catch(error){
 
   }
 }
 
+
+function* lossing(action){
+  try {
+    const playerID = action.payload;
+    console.log("in lossing: ", playerID);
+    yield axios.put("/api/player/loss", {id:playerID})
+    yield put({type: 'FETCH_SCOREBOARD'})
+  } catch(error){
+
+  }
+}
+
+function* removeFav(action){
+  try {
+    const courtID = action.payload;
+    yield axios.delete(`/api/court/favCourt/${courtID}`)
+    yield put({type: 'FETCH_FAVCOURT'})
+  } catch(error){
+
+  }
+}
+
+
 function* scoreboardSaga() {
   yield takeLatest('FETCH_SCOREBOARD', fetchScoreboard);
   yield takeLatest('UPDATE_WIN', winning);
+  yield takeLatest('UPDATE_LOSS', lossing);
+  yield takeLatest('DELETE_FAV', removeFav);
 }
 
 export default scoreboardSaga;

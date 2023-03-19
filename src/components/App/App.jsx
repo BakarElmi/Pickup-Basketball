@@ -23,6 +23,7 @@ import PlayerPage from '../PlayerPage/PlayerPage';
 import CourtsPage from '../CourtsPage/CourtsPage';
 import ScoreboardPage from '../ScoreboardPage/ScoreboardPage';
 import Top10Page from '../Top10Page/Top10Page';
+import ScoreboardMenuPage from '../ScoreboardMenuPage/ScoreboardMenuPage';
 
 import './App.css';
 
@@ -95,6 +96,15 @@ function App() {
           >
             <ScoreboardPage />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/scoreboard1"
+          >
+            <ScoreboardMenuPage />
+          </ProtectedRoute>
+
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage

@@ -15,6 +15,12 @@ function ScoreboardPage() {
   const dispatch = useDispatch();
 
   const scoreboard = useSelector(store => store.scoreboard);
+  const player = useSelector(store => store.player);
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_PLAYER' });
+  }, [dispatch]);
+
 
   useEffect(() => {
     dispatch({ type: 'FETCH_SCOREBOARD' });
@@ -28,10 +34,16 @@ function ScoreboardPage() {
     const time =[minutes, setMinutes] = useState(0)
   }
 
+
   function win(){
    dispatch({ type: 'UPDATE_WIN',
   payload: "1"})
   }
+
+  function loss(){
+    dispatch({ type: 'UPDATE_LOSS',
+   payload: "1"})
+   }
   
   function play() {
     new Audio(sound).play()
@@ -41,9 +53,47 @@ function ScoreboardPage() {
     new Audio(sound2).play()
   }
 
+
+  let opponent = "jayhoops";
+  let score = 21;
+  const home = Object.values(player)
+  console.log("hellooo", count);
+ 
+
+  if(count >= score){
+    alert("you won!!");
+    dispatch({ 
+      type: 'UPDATE_WIN',
+      payload: "1"})
+    
+    dispatch({ 
+      type: 'UPDATE_LOSS',
+      payload: "2"})
+  }
+
+
+  if(count2 >= score){
+    alert("you lossed!!");
+    dispatch({ 
+      type: 'UPDATE_LOSS',
+      payload: "1"})
+  
+    dispatch({ 
+      type: 'UPDATE_WIN',
+      payload: "2"})
+
+  }
+
+  
+
   return (
     <div className="container">
-      <h1>Team 1</h1>
+      
+      <h1>{player.map(item => {
+      return (<>{item.username}
+      </>
+      )
+    })}</h1>
       <h2>{count}</h2>
 
           <button className="increase" onClick={()=>setCount(count+2)}>2</button>
@@ -51,12 +101,12 @@ function ScoreboardPage() {
           <button onClick={play}>iii</button>
           <button onClick={play2}>iiii</button>
 
-      <h1>Team 2</h1>
+      <h1>{opponent}</h1>
       <h2>{count2}</h2>
 
           <button className="increase" onClick={()=>setCount2(count2+2)}>2</button>
           <button className="decrease" onClick={()=>setCount2(count2+3)}>3</button>
-
+      
     </div>
   );
 }

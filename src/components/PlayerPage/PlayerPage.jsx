@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './PlayerPage.css'
+// import style from './PlayerPage.module.css'
 
 
 // This is one of our simplest components
@@ -16,10 +17,17 @@ function PlayerPage() {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_PLAYER' });
+    dispatch({ type: 'FETCH_FAVCOURT' });
   }, [dispatch]);
 
+  const favCourt = useSelector(store => store.court.favCourtReducer);
 
-  
+  function removeFavCourt(id){
+    console.log(id);
+
+  }
+
+
   return (
     <div className="container">
       {/* <p>My Player Page</p> */}
@@ -30,14 +38,18 @@ function PlayerPage() {
                 <h1>Wins:  {item.wins}</h1>
                 <h1>Loss:  {item.losses}</h1>
                 <br></br>
-                <h2 >Fav courts:</h2>
-                <h3>Luxton Park</h3>
-                <h3>Phelps Field Park</h3>
-
-      
       </>
       )
     })}
+    
+    {favCourt.map(item => {
+      return (<div key={item.id}>
+      <h7>{item.name}</h7> 
+      <button onClick={()=> { dispatch({ type: 'DELETE_FAV' , payload: item.id});}}>remove</button>        
+      </div>
+      )
+    })}
+
     </div>
   );
 }

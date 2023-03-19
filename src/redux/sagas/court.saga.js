@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* fetchCourt() {
@@ -25,8 +25,29 @@ function* fetchCourt() {
   }
 }
 
+function* fetchFavCourt(){
+  try {
+    const response = yield axios.get('/api/court/favCourt');
+    yield put({ type: 'SET_FAVCOURT', payload: response.data });
+  }catch(error){
+    console.log('User get request failed', error);
+  }
+}
+
+function* CreateFavCourt(action){
+  try {
+    yield axios.post('/api/court/create/favCourt', {courtname: action.payload});
+    yield put({ type: 'FETCH_FAVCOURT'});
+  }catch(error){
+    console.log('User get request failed', error);
+  }
+}
+
+
 function* courtSaga() {
   yield takeLatest('FETCH_COURT', fetchCourt);
+  yield takeLatest('FETCH_FAVCOURT', fetchFavCourt);
+  yield takeEvery('CREATE_FAVCOURT', CreateFavCourt);
 }
 
 export default courtSaga;

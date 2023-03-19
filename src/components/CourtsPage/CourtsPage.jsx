@@ -15,7 +15,7 @@ function CourtsPage() {
   
   const dispatch = useDispatch();
   
-  const court = useSelector(store => store.court);
+  const court = useSelector(store => store.court.courtReducer);
   
   useEffect(() => {
     dispatch({ type: 'FETCH_COURT' });
@@ -73,7 +73,7 @@ function CourtsPage() {
       <button >All</button>
       {/* <h1>{obj1[0]}</h1> */}
       {obj1.map(item => {
-      return (<li classname="search" key={item.id}>{item.name + " address: " + item.address + " Notes: " + item.Notes}<button>+</button></li>)
+      return (<li classname="search" key={item.id}>{item.name + " address: " + item.address + " Notes: " + item.Notes}<button onClick={() => {dispatch({type:"CREATE_FAVCOURT", payload: item.name })}}>+</button></li>)
       })}
 
     </div>

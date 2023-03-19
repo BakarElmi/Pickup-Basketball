@@ -1,0 +1,111 @@
+
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.h1{
+  font-family:Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+  height: 100vh;
+  background-color:gray;
+  color: gray;
+  box-shadow: 0 4px 0px #333;
+}
+
+.h1{
+  font-size: 6rem;
+}
+
+
+h2{
+
+  display: flex;
+  gap:1rem;
+
+    border: none;
+    background-color:white;
+    font-weight:bold;
+    font-size:2rem;
+    color:inherit;
+
+    margin: auto;
+  width: 50%;
+
+  padding: 10px;
+  }
+
+  h3{
+
+    display: flex;
+    gap:1rem;
+    align-items: center;
+      border: none;
+      background-color:white;
+      font-weight:bold;
+      font-size:1rem;
+      color:inherit;
+      
+      margin: auto;
+    width: 50%;
+    padding-right:-35px;
+
+    }
+  /* .button-wrapper:hover{
+    background: #549d59;
+    cursor: pointer;
+  } */
+
+  h1{
+
+    margin: center;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+    display: flex;
+    border: none;
+    background-color:rgb(237, 30, 30);
+    font-weight:bold;
+    font-size:2rem;
+    color:white;
+    height:5rem;
+    width:50rem;
+  }
+
+  .decrease{
+    display: flex;
+  gap:1rem;
+    border: none;
+    background-color:rgb(237, 30, 30);
+    font-weight:bold;
+    font-size:2rem;
+    color:inherit;
+    height:4rem;
+    width:8rem;
+
+  }
+
+  .increase:hover{
+    background: #549d59;
+    cursor: pointer;
+
+  }
+
+
+ h1:hover{
+    background: #d80808;
+    cursor: pointer;
+
+  }
+
+  
+
