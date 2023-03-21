@@ -14,6 +14,7 @@ function PlayerPage() {
   const dispatch = useDispatch();
 
   const player = useSelector(store => store.player);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_PLAYER' });
@@ -32,7 +33,7 @@ function PlayerPage() {
     <div className="container">
       {/* <p>My Player Page</p> */}
       {/* { JSON.stringify(player)} */}
-      {player.map(item => {
+      {/* {player.map(item => {
       return (<><h1>hello, {item.username}</h1>
                 <h1>Games:  {item.wins + item.losses}</h1>
                 <h1>Wins:  {item.wins}</h1>
@@ -40,16 +41,25 @@ function PlayerPage() {
                 <br></br>
       </>
       )
-    })}
-    
+    })} */}
+
+      <h1>hello, {user.username}</h1>
+      <h1>Games:  {user.wins + user.losses}</h1>
+      <h1>Wins:  {user.wins}</h1>
+      <h1>Loss:  {user.losses}</h1>
+      <br></br>
+
+    <div className='favWrapper'>
+    <h4>Fav Courts</h4>
     {favCourt.map(item => {
       return (<div key={item.id}>
       <h7>{item.name}</h7> 
-      <button onClick={()=> { dispatch({ type: 'DELETE_FAV' , payload: item.id});}}>remove</button>        
+      <button className='remove' onClick={()=> { dispatch({ type: 'DELETE_FAV' , payload: item.id});}}>-</button>        
       </div>
       )
     })}
 
+    </div>
     </div>
   );
 }

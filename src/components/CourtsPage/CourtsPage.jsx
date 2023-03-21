@@ -65,16 +65,28 @@ function CourtsPage() {
 
   // const filtered = court.map(court =>  <Card key={court.name} court={person} />); 
   return (
-    <div className="container">
+    <div className="containerCourt">
       {/* { JSON.stringify(court)} */}
-
-      <input type="text" placeholder='court name' onChange={handleChange} />
+      <div className="inpu1">
+      <input className="inputbar" type="text" placeholder='court name' onChange={handleChange} />
       {/* <button>search</button> */}
-      <button >All</button>
+      <button className="input" >All</button>
       {/* <h1>{obj1[0]}</h1> */}
+      </div>
+      <div className="output">
       {obj1.map(item => {
-      return (<li classname="search" key={item.id}>{item.name + " address: " + item.address + " Notes: " + item.Notes}<button onClick={() => {dispatch({type:"CREATE_FAVCOURT", payload: item.name })}}>+</button></li>)
+      return (<>
+      <h8 style={{ fontWeight: 'bold' }} classname="search1" key={item.id}>{item.name }</h8>
+      <br></br>
+      <h8 classname="search" key={item.id}>{item.address}</h8>
+      <br></br>
+      <h8 classname="search" key={item.id}>{" Notes: " + item.Notes}</h8>
+      <div classname="add2">
+      <button classname="add1" onClick={() => {dispatch({type:"CREATE_FAVCOURT", payload: item.name })}}>+</button>
+      </div>
+      </>)
       })}
+      </div>
 
     </div>
   );

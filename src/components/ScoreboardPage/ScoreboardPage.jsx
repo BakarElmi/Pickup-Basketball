@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ScoreboardPage.css';
 import sound from "./swoosh1.wav"
 import sound2 from "./swoosh2.wav"
+import Button from '@material-ui/core/Button'
+
+
 
 
 // This is one of our simplest components
@@ -16,6 +19,7 @@ function ScoreboardPage() {
 
   const scoreboard = useSelector(store => store.scoreboard);
   const player = useSelector(store => store.player);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_PLAYER' });
@@ -29,10 +33,7 @@ function ScoreboardPage() {
   const[count,setCount] = useState(0);
   const[count2,setCount2] = useState(0);
 
-
-  const Timer = () => {
-    const time =[minutes, setMinutes] = useState(0)
-  }
+  
 
 
   function win(){
@@ -84,29 +85,31 @@ function ScoreboardPage() {
 
   }
 
-  
-
+  // style={{ font-family:Montserrat, sans-serif; }}
+  // <h8 style={{ fontWeight: 'bold' }} classname="search1" key={item.id}>{item.name }</h8>
   return (
-    <div className="container">
+    <div className="containerScore1">
+      <div className="containerScore">
+      <div className='player1'>
+      <h3 >{user.username}</h3>
+      <h3>{count}</h3>
+
+          <Button className="increase" onClick={()=>{play2(); setCount(count+2)}}>2</Button>
+          <Button className="decrease"onClick={()=>{play(); setCount(count+3)}}>3</Button>
+          <Button>helii</Button>
+      </div>
+
+      <div className='player2'>
+      <br></br>
+      <br></br>
+      <h3>{opponent}</h3>
+      <h3>{count2}</h3>
+
+          <button className="increase" onClick={()=>{play2(); setCount2(count2+2)}}>2</button>
+          <button className="decrease" onClick={()=>{play(); setCount2(count2+3)}}>3</button>
       
-      <h1>{player.map(item => {
-      return (<>{item.username}
-      </>
-      )
-    })}</h1>
-      <h2>{count}</h2>
-
-          <button className="increase" onClick={()=>setCount(count+2)}>2</button>
-          <button className="decrease"onClick={()=>setCount(count+3)}>3</button>
-          <button onClick={play}>iii</button>
-          <button onClick={play2}>iiii</button>
-
-      <h1>{opponent}</h1>
-      <h2>{count2}</h2>
-
-          <button className="increase" onClick={()=>setCount2(count2+2)}>2</button>
-          <button className="decrease" onClick={()=>setCount2(count2+3)}>3</button>
-      
+      </div>
+      </div>
     </div>
   );
 }

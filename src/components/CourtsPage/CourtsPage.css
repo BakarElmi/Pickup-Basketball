@@ -1,6 +1,8 @@
 
+.add{
 
-
+  background-color:rgb(255, 255, 255);
+}
 
 
 
@@ -12,17 +14,110 @@
   align-items: center;
   gap:2rem;
   height: 100vh;
-  background-color:gray;
-  color: rgb(236, 11, 11);
+  background-color:rgb(255, 255, 255);
+  color: rgb(62, 193, 36);
   box-shadow: 0 4px 0px #333;
 }
 
-.h1{
-  font-size: 6rem;
+.containerCourt{
+  box-sizing: border-box;
+  width: 600px;
+  height: 300px;
+  padding: 70px 150px;
+  margin: 0 auto 70px;
+  background-image: url("logo1.png");
+  background-color: #d61919;
+  border-radius: 10px;
+    margin: auto;
+  /* filter: blur(10px);
+  -webkit-filter: blur(.5px); */
+}
+
+.input{
+  font-family:Montserrat, sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin: center;
+  box-shadow: 30 4px 20px rgb(237, 16, 16);
+  font-size:1rem;
+  
+
 }
 
 
-.button-wrapper{
+.inputbar{
+  font-family:Montserrat, sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin: center;
+
+  font-size:1rem;
+  width: 240px;
+  
+
+}
+
+
+
+.output{
+  font-family:Montserrat, sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin: center;
+  box-shadow: 30 4px 20px rgb(237, 16, 16);
+  font-size:.9rem;
+  color: rgb(0, 0, 0);
+  gap:1rem;
+  height: 15vh;
+  width: 60vh;
+  padding: 0px 8px;
+
+
+}
+
+.add2{
+
+  border-radius: 50%;
+  border-color: black;
+  background-color:hwb(0 12% 7%);
+  margin-left: 10px;
+  opacity: 30%;
+  
+  }
+
+
+.add2:hover{
+
+  background-color:hwb(0 12% 7%);
+  cursor: pointer;
+  opacity: 100%;
+}
+
+
+
+
+
+/* h8{
+
+} */
+
+
+
+/* font-family:Montserrat, sans-serif;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap:1rem;
+height: 10vh;
+background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+box-shadow: 30 4px 20px rgb(237, 16, 16);
+font-weight:bold; */
+
+
+
+/* .button-wrapper{
 
   display: flex;
   gap:1rem;
@@ -36,44 +131,18 @@
     width:4rem;
 
 
-  }
+  } */
 
   /* .button-wrapper:hover{
     background: #549d59;
     cursor: pointer;
   } */
 
-  .increase{
-
-    display: flex;
-  gap:1rem;
-    border: none;
-    background-color:rgb(237, 30, 30);
-    font-weight:bold;
-    font-size:2rem;
-    color:inherit;
-    height:4rem;
-    width:8rem;
-  }
-
-  .decrease{
-    display: flex;
-  gap:1rem;
-    border: none;
-    background-color:rgb(237, 30, 30);
-    font-weight:bold;
-    font-size:2rem;
-    color:inherit;
-    height:4rem;
-    width:8rem;
-
-  }
-
-  .increase:hover{
+  /* .increase:hover{
     background: #549d59;
     cursor: pointer;
 
-  }
+  } */
 
   
 

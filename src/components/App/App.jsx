@@ -39,7 +39,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+    
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
@@ -49,7 +49,7 @@ function App() {
             // shows AboutPage at all times (logged in or not)
             exact
             path="/about"
-          >
+          > <Nav />
             <AboutPage />
           </Route>
 
@@ -61,7 +61,7 @@ function App() {
             // logged in shows UserPage else shows LoginPage
             exact
             path="/user"
-          >
+          > <Nav />
             <UserPage />
           </ProtectedRoute>
 
@@ -69,15 +69,16 @@ function App() {
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
-          >
+          > <Nav />
             <InfoPage />
           </ProtectedRoute>
 
           <ProtectedRoute
+          
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/player"
-          >
+          >  <Nav />
             <PlayerPage />
           </ProtectedRoute>
 
@@ -85,7 +86,7 @@ function App() {
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/courts"
-          >
+          > <Nav />
             <CourtsPage />
           </ProtectedRoute>
 
@@ -93,7 +94,7 @@ function App() {
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/scoreboard"
-          >
+          > <Nav />
             <ScoreboardPage />
           </ProtectedRoute>
 
@@ -101,7 +102,7 @@ function App() {
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/scoreboard1"
-          >
+          > <Nav />
             <ScoreboardMenuPage />
           </ProtectedRoute>
 
@@ -110,7 +111,7 @@ function App() {
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/top10"
-          >
+          > <Nav />
             <Top10Page />
           </ProtectedRoute>
 

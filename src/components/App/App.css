@@ -97,16 +97,40 @@ Form Treatment
 
 .formPanel {
   box-sizing: border-box;
-  width: 400px;
-  max-width: 100%;
+  width: 200px;
+  height: 300px;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  background-image: url("logo1.png");
+  background-color: #000000;
+  border-radius: 15px;
+  /* filter: blur(10px);
+  -webkit-filter: blur(.5px); */
 }
+
 
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.formPanel2 {
+  display: flex;
+  gap:1rem;
+    border: none;
+    background-color:rgb(237, 30, 30);
+    font-weight:bold;
+
+    color:inherit;
+
+}
+
+
+html, 
+body, 
+#background { 
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #000000;
+
 }
