@@ -4,6 +4,8 @@ import './ScoreboardPage.css';
 import sound from "./swoosh1.wav"
 import sound2 from "./swoosh2.wav"
 import Button from '@material-ui/core/Button'
+import { Icon } from "@material-ui/core";
+import YourLogo from './sports_basketball.svg'
 
 
 
@@ -94,9 +96,10 @@ function ScoreboardPage() {
       <h3 >{user.username}</h3>
       <h3>{count}</h3>
 
-          <Button className="increase" onClick={()=>{play2(); setCount(count+2)}}>2</Button>
-          <Button className="decrease"onClick={()=>{play(); setCount(count+3)}}>3</Button>
-          <Button>helii</Button>
+          {/* <Button className="increase" onClick={()=>{play2(); setCount(count+2)}}>2</Button>
+          <Button className="decrease"onClick={()=>{play(); setCount(count+3)}}>3</Button> */}
+          <Icon className="increase" onClick={()=>{play2(); setCount(count+2)}}><img src={YourLogo} height={25} width={25}/></Icon>
+          <Icon className="decrease" onClick={()=>{play(); setCount(count+3)}}><img src={YourLogo} height={25} width={25}/></Icon>
       </div>
 
       <div className='player2'>
@@ -105,9 +108,10 @@ function ScoreboardPage() {
       <h3>{opponent}</h3>
       <h3>{count2}</h3>
 
-          <button className="increase" onClick={()=>{play2(); setCount2(count2+2)}}>2</button>
-          <button className="decrease" onClick={()=>{play(); setCount2(count2+3)}}>3</button>
-      
+          {/* <button className="increase" onClick={()=>{play2(); setCount2(count2+2)}}>2</button>
+          <button className="decrease" onClick={()=>{play(); setCount2(count2+3)}}>3</button> */}
+          <Icon className="increase" onClick={()=>{play2(); setCount2(count2+2)}}><img src={YourLogo} height={25} width={25}/></Icon>
+          <Icon className="decrease" onClick={()=>{play(); setCount2(count2+3)}}><img src={YourLogo} height={25} width={25}/></Icon>
       </div>
       </div>
     </div>

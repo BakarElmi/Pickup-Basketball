@@ -1,4 +1,5 @@
 import React from 'react';
+import './Top10Page.css'
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -9,9 +10,10 @@ function Top10Page() {
   return (
     <div className="container">
       <h1>Top10 Players</h1>
-      <table>
+      <div className="top10" >
+      <table >
         <tr>
-          <th>Name</th>
+          <th >Name</th>
           <th>Wins</th>
           <th>Loss</th>
         </tr>
@@ -66,6 +68,7 @@ function Top10Page() {
           <td>21</td>
         </tr>
       </table>
+      </div>
     </div>
   );
 }

@@ -8,6 +8,75 @@
 
 }
 
+.menu{
+
+  box-sizing: border-box;
+    width: 600px;
+    height: 500px;
+    padding: 40px 80px;
+    margin: 0 auto 70px;
+    /* background-image: url("logo1.png"); */
+    background-color: #b41d1d;
+    border-radius: 10px;
+    font-size:1rem;
+      margin: auto;
+      color: rgb(255, 255, 255);
+    /* filter: blur(10px);
+    -webkit-filter: blur(.5px); */
+  
+  }
+
+
+  .menu1{
+
+    box-sizing: border-box;
+      width: 400px;
+      height: 500px;
+      padding: 80px 110px;
+      margin: 0 auto 70px;
+      /* background-image: url("logo1.png"); */
+      border-radius: 10px;
+        margin: auto;
+        color: rgb(255, 255, 255);
+      /* filter: blur(10px);
+      -webkit-filter: blur(.5px); */
+    
+    }
+
+
+  .input{
+    font-family:Montserrat, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: right;
+    box-shadow: 30 4px 20px rgb(237, 16, 16);
+    font-size:1rem;
+
+  
+  }
+  
+  .playnow{
+    color: rgb(255, 255, 255);
+    font-size:1rem;
+    padding: 80px 80px;
+  }
+
+
+  
+  /* .inputbar{
+    font-family:Montserrat, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: center;
+  
+    font-size:1rem;
+    width: 240px;
+    
+  
+  } */
+  
+
+
 /* 
 .h1{
   font-family:Montserrat, sans-serif;

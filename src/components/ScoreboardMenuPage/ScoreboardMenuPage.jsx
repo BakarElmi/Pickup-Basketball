@@ -1,7 +1,9 @@
-import { number } from 'prop-types';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import './ScoreboardMenuPage.css'
+import { Button } from '@material-ui/core';
+
 
 
 // This is one of our simplest components
@@ -10,6 +12,7 @@ import './ScoreboardMenuPage.css'
 // or even care what the redux state is
 
 function PlayerPage() {
+
   
   const dispatch = useDispatch();
 
@@ -20,15 +23,31 @@ function PlayerPage() {
   }, [dispatch]);
 
 
+
+  const history = useHistory();
+  
+  const routeChange = () =>{ 
+    let path = `scoreboard`; 
+    history.push(path);
+  }
+
+
       
       return (<>
-          <h8>opponent</h8>
-          <input type="text" placeholder='Username'></input>
+      <div className='menu'>
+        <div className="menu1">
+          <h8 className="input">Opponent</h8>
+          
+          <input classname="inputbar" type="text" ></input>
           <br></br>
-          <h8>Match Point</h8>
-          <input type="integer" placeholder='points'></input>
-
-          <button>Play Now</button>
+          <h8 className="input" >Match Point</h8>
+          <input type="number" ></input>
+          <br></br>
+          <div classname="playnow">
+          <Button  style={{ marginLeft: "14px" }} size="large" color="success" variant="outlined" onClick={routeChange}>Play Now</Button>
+          </div>
+          </div>
+          </div>
       </>
   );
 }
